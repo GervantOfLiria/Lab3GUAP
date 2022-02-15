@@ -1,0 +1,38 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <cmath>
+#include <stdio.h>
+#include <stdlib.h>
+int main() {
+	int i = 0;
+	int summ = 0;
+	char a[5];
+	void checkNumber(char c);
+	while (i < 5) {
+		a[i]=48;
+		i++;
+	}
+	i = 0;
+	printf("ENTER a 5-digit number:	");
+	while (i < 5) {
+		scanf("%c", &a[i]);
+		checkNumber(a[i]);
+		summ += a[i];
+		i++;
+	}
+	i = 0;
+	printf( "Result: Average = %c	", summ / 5);
+	while (i < 5) {
+		if (a [i] < summ / 5) {
+			a [i] = 48;
+		}
+		printf("%c", a[i]);
+		i++;
+	}
+}
+
+void checkNumber(char c) {
+	if (!(48 < c && c < 57)) {
+		printf("Error! What you wrote sure isn't a number!");
+		abort();
+	}
+}
